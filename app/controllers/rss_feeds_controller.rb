@@ -14,9 +14,7 @@ class RssFeedsController < ApplicationController
   # POST /api/v1/rss/update
   def update_all
     RssFeed.all.each do |rss_feed|
-      if rss_feed.id == 2
-        rss_feed.update_all
-      end
+      rss_feed.update_all
     end
     render json: { code: 0, message: '', data: {}}
   end
