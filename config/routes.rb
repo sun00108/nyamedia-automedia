@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   # Dev only
   post '/api/v1/rss/update', to: 'rss_feeds#update_all'
+  get '/api/v1/torrents', to: 'torrents#list'
   post '/api/v1/torrents/:id/scrape', to: 'torrents#scrape'
   get '/api/v1/subscriptions/:id', to: 'subscriptions#show'
 end
