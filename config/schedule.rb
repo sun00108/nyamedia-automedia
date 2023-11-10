@@ -24,5 +24,6 @@ every 30.minutes do
 end
 
 every 10.minutes do
+  runner "RssFeed.update_all()" , environment: 'development'
   runner "Torrent.left_outer_joins(:media).where(media: { id: nil }).find_each(&:scrape)" , environment: 'development'
 end

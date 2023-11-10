@@ -77,6 +77,7 @@ class Torrent < ApplicationRecord
       save
       TelegramService.broadcast("【正在下载】 #{media.name} - S#{media.season}E#{media.episode}")
     rescue
+      print("Error message #{$!}")
       TelegramService.broadcast("【下载失败】 #{media.name} - S#{media.season}E#{media.episode}")
     end
   end
