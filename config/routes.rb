@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   get '/api/v1/medias', to: 'medias#list'
   get '/api/v1/medias/filters', to: 'medias#filters'
 
+  get '/api/v1/subscriptions', to: 'subscriptions#list'
   post '/api/v1/subscriptions/create', to: 'subscriptions#create'
+  post '/api/v1/subscriptions/:id/update', to: 'subscriptions#update'
+  post '/api/v1/subscriptions/:id/delete', to: 'subscriptions#delete'
 
   # Dev only
   post '/api/v1/rss/update', to: 'rss_feeds#update_all'
