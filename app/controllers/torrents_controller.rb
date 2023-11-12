@@ -3,6 +3,9 @@ class TorrentsController < ApplicationController
   # GET /api/v1/torrents
   def list
     torrents = Torrent.all
+    torrents.each do |torrent|
+      torrent.magnet = nil
+    end
     render json: { code: 0, message: '', data: torrents }
   end
 
